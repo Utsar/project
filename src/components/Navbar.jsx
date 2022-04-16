@@ -29,16 +29,22 @@ const NavLink = css`
   padding: 0 1rem;
   display: flex;
   align-items: center;
-  cursor: pointer;
   text-decoration: none;
-`;
-const Links = styled(Link)`
-  ${NavLink}
+  opacity: 0.7;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
 `;
 const NavLinks = styled.div`
   display: flex;
   align-items: center;
   margin-right: 2rem;
+`;
+const Links = styled(Link)`
+  ${NavLink}
+  &:hover {
+    opacity: 1;
+    transition: 0.3s ease-in-out;
+  }
 `;
 
 const Navbar = () => {
