@@ -1,9 +1,11 @@
-import "./App.css";
+import Navbar from "./components/Navbar";
+import GlobalStyle from "./GlobalStyles";
 
 function App() {
   return (
     <>
-      <h1>here we go</h1>
+      <GlobalStyle />
+      <Navbar />
     </>
   );
 }
