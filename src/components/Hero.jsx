@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components/macro";
 
 const Container = styled.div`
-  position: relative;
+  /* position: relative; */
   background: teal;
   top: 100px;
   height: calc(100vh - 100px);
