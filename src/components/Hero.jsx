@@ -11,13 +11,18 @@ const Container = styled.div`
 `;
 const HeroWrapper = styled.div`
   position: absolute;
-  top: 25%;
+  top: 30%;
   display: flex;
   align-items: center;
   flex-direction: column;
+
+  @media screen and (max-width: 768px) {
+    top: 25%;
+  }
 `;
 const HeroTextTitle = styled.h1`
   color: whitesmoke;
+  margin-bottom: 1rem;
 `;
 const HeroTextSlogan = styled.p`
   color: whitesmoke;
@@ -30,6 +35,10 @@ const LandingForm = styled.input`
   border: none;
   background: whitesmoke;
 
+  &::placeholder {
+    color: black;
+  }
+
   &:focus {
     outline: none;
   }
@@ -40,6 +49,10 @@ const LandingSelect = styled.select`
   border-radius: 5px;
   border: none;
   background: whitesmoke;
+
+  &::placeholder {
+    color: black;
+  }
 
   &:focus {
     outline: none;
@@ -52,15 +65,18 @@ const Button = styled.button`
   color: #fff;
   font-weight: 500;
   background: green;
+  cursor: pointer;
 `;
 const LandingFormContainer = styled.div`
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
+  top: 50%;
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
+    top: 40%;
     ${LandingForm} {
       width: 260px;
       margin-bottom: 5px;
