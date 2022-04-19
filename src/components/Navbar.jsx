@@ -11,6 +11,7 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 100;
 `;
 const NavMenu = styled(Link)`
   height: 100%;

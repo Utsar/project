@@ -1,41 +1,34 @@
 import styled, { css } from "styled-components/macro";
 
 const Container = styled.div`
-  /* position: relative; */
-  background: teal;
-  top: 100px;
-  height: calc(100vh - 100px);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  background: black;
 `;
 const HeroWrapper = styled.div`
   position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 10%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-const HeroTextTitle = styled.h1``;
-const HeroTextSlogan = styled.p``;
-
-const LandingFormContainer = styled.div`
-  position: absolute;
   top: 25%;
-  width: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
-
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
-  }
+  flex-direction: column;
 `;
+const HeroTextTitle = styled.h1`
+  color: whitesmoke;
+`;
+const HeroTextSlogan = styled.p`
+  color: whitesmoke;
+`;
+
 const LandingForm = styled.input`
   padding: 0.5rem;
-  border: none;
   margin-right: 0.2rem;
-  width: 100%;
   border-radius: 5px;
+  border: none;
+  background: whitesmoke;
 
   &:focus {
     outline: none;
@@ -43,10 +36,10 @@ const LandingForm = styled.input`
 `;
 const LandingSelect = styled.select`
   padding: 0.5rem;
-  width: 100%;
   margin-right: 0.2rem;
   border-radius: 5px;
   border: none;
+  background: whitesmoke;
 
   &:focus {
     outline: none;
@@ -60,6 +53,27 @@ const Button = styled.button`
   font-weight: 500;
   background: green;
 `;
+const LandingFormContainer = styled.div`
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    ${LandingForm} {
+      width: 260px;
+      margin-bottom: 5px;
+    }
+    ${LandingSelect} {
+      width: 278px;
+      margin-bottom: 5px;
+    }
+    ${Button} {
+      width: 100px;
+    }
+  }
+`;
 
 const Hero = () => {
   return (
@@ -70,7 +84,11 @@ const Hero = () => {
           <HeroTextSlogan>Home for every event</HeroTextSlogan>
         </HeroWrapper>
         <LandingFormContainer>
-          <LandingForm placeholder="What are you planning?" type="text" />
+          <LandingForm
+            placeholder="What are you planning?"
+            type="text"
+            style={{ minWidth: "19ch" }}
+          />
           <LandingForm placeholder="Location" />
           <LandingSelect placeholder="Guest" type="select">
             <option>0-10</option>
