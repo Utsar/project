@@ -1,15 +1,9 @@
-import Footer from "./components/Footer";
-import Hero from "./components/Hero";
-import Navbar from "./components/Navbar";
-import GlobalStyle from "./GlobalStyles";
+import LandingPage from "./pages/LandingPage";
 
 function App() {
   return (
     <>
-      <GlobalStyle />
-      <Navbar />
-      <Hero />
-      <Footer />
+      <LandingPage />
     </>
   );
 }
