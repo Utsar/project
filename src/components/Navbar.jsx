@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components/macro";
 import { menuLinks } from "../assets/data/NavMenuLinks";
@@ -12,6 +13,12 @@ const Nav = styled.nav`
   justify-content: space-between;
   align-items: center;
   z-index: 100;
+
+  ${(props) =>
+    props.onlyLogo &&
+    css`
+      justify-content: center;
+    `}
 `;
 const NavMenu = styled(Link)`
   height: 100%;
@@ -39,6 +46,11 @@ const NavLinks = styled.div`
   display: flex;
   align-items: center;
   margin-right: 2rem;
+  ${(props) =>
+    props.displayNoLinks &&
+    css`
+      display: none;
+    `}
 `;
 const Links = styled(Link)`
   ${NavLink}
@@ -48,14 +60,14 @@ const Links = styled(Link)`
   }
 `;
 
-const Navbar = () => {
+const Navbar = ({ onlyLogo, displayNoLinks }) => {
   return (
     <>
-      <Nav>
+      <Nav onlyLogo={onlyLogo}>
         <NavMenu to="/">
           <Logo src={logoWhite} alt="GlobalEventAuctionLogo" />
         </NavMenu>
-        <NavLinks>
+        <NavLinks displayNoLinks={displayNoLinks}>
           {menuLinks.map((item, index) => (
             <Links to={item.link} key={index}>
               {item.title}
