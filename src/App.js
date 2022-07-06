@@ -4,8 +4,8 @@ import SuppliersAuth from "./pages/SuppliersAuth";
 function App() {
   return (
     <>
-      {/* <LandingPage /> */}
-      <SuppliersAuth />
+      <LandingPage />
+      {/* <SuppliersAuth /> */}
     </>
   );
 }

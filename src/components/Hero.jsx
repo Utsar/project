@@ -14,15 +14,21 @@ const HeroWrapper = styled.div`
   top: 30%;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
 
   @media screen and (max-width: 768px) {
-    top: 25%;
+    top: 20%;
   }
 `;
 const HeroTextTitle = styled.h1`
   color: whitesmoke;
   margin-bottom: 1rem;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
+    margin-top: 20%;
+  }
 `;
 const HeroTextSlogan = styled.p`
   color: whitesmoke;
@@ -76,7 +82,7 @@ const LandingFormContainer = styled.div`
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
-    top: 40%;
+    top: 47%;
     ${LandingForm} {
       width: 260px;
       margin-bottom: 5px;

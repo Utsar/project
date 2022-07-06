@@ -19,6 +19,9 @@ const Nav = styled.nav`
     css`
       justify-content: center;
     `}
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 const NavMenu = styled(Link)`
   height: 100%;
@@ -51,6 +54,11 @@ const NavLinks = styled.div`
     css`
       display: none;
     `}
+
+  @media screen and (max-width: 768px) {
+    margin-right: 0;
+    margin-top: 1rem;
+  }
 `;
 const Links = styled(Link)`
   ${NavLink}
