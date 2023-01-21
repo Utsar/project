@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components/macro";
-import { Link } from "react-router-dom";
 
 const FooterLinks = css`
   cursor: pointer;
