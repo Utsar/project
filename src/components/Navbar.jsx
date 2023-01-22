@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components/macro";
 import { menuLinks } from "../assets/data/NavMenuLinks";
