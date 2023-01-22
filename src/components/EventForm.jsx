@@ -43,7 +43,7 @@ const EventForm = () => {
   return (
     <Container>
       <Box sx={{ maxWidth: 400 }}>
-        <Stepper activeStep={activeStep} orientation="horizontal">
+        <Stepper activeStep={activeStep} orientation="vertical">
           {/* Mapping through the steps data to create each step */}
           {steps.map((step, index) => (
             <Step key={step.label}>
