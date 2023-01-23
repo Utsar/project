@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components/macro";
 
 const LandingForm = styled.input`
@@ -69,13 +69,20 @@ const Initial = () => {
   const [location, setLocation] = useState("");
   const [guestCount, setGuestCount] = useState("");
   const [date, setDate] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    localStorage.setItem("eventType", eventType);
-    localStorage.setItem("location", location);
-    localStorage.setItem("guestCount", guestCount);
-    localStorage.setItem("date", date);
+    // Checking if all form fields have a value
+    if (eventType && location && guestCount && date) {
+      localStorage.setItem("eventType", eventType);
+      localStorage.setItem("location", location);
+      localStorage.setItem("guestCount", guestCount);
+      localStorage.setItem("date", date);
+      navigate("/formJourney");
+    } else {
+      alert("Please Fill all the fields");
+    }
   };
 
   return (
@@ -114,9 +121,7 @@ const Initial = () => {
           value={date}
           onChange={(e) => setDate(e.target.value)}
         />
-        <Link to="/formJourney" onClick={handleSubmit}>
-          <Button>Submit</Button>
-        </Link>
+        <Button onClick={handleSubmit}>Submit</Button>
       </LandingFormContainer>
     </>
   );

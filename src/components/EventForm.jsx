@@ -8,7 +8,7 @@ import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
 import { Typography } from "@material-ui/core";
 import { WeddingQuestions } from "../assets/data/EventFormData.js";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // Styling the main container to be centered on the page
 const Container = styled.div`
@@ -24,6 +24,24 @@ const steps = WeddingQuestions.steps;
 const EventForm = () => {
   // Keeping track of the current step the user is on
   const [activeStep, setActiveStep] = useState(0);
+  // State to hold the initial form inputs
+  const [eventType, setEventType] = useState("");
+  const [location, setLocation] = useState("");
+  const [guestCount, setGuestCount] = useState("");
+  const [date, setDate] = useState("");
+
+  useEffect(() => {
+    // Retrieve data from localStorage on component mount
+    const eventTypeFromStorage = localStorage.getItem("eventType");
+    const locationFromStorage = localStorage.getItem("location");
+    const guestCountFromStorage = localStorage.getItem("guestCount");
+    const dateFromStorage = localStorage.getItem("date");
+    // Set the state with the retrieved data
+    setEventType(eventTypeFromStorage);
+    setLocation(locationFromStorage);
+    setGuestCount(guestCountFromStorage);
+    setDate(dateFromStorage);
+  }, []);
 
   // Function to move to the next step
   const handleNext = () => {
@@ -42,7 +60,13 @@ const EventForm = () => {
 
   return (
     <Container>
-      <Box sx={{ maxWidth: 400 }}>
+      <div>
+        {eventType}
+        {location}
+        {guestCount}
+        {date}
+      </div>
+      <Box sx={{ maxWidth: 1200 }}>
         <Stepper activeStep={activeStep} orientation="vertical">
           {/* Mapping through the steps data to create each step */}
           {steps.map((step, index) => (
